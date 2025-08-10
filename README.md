@@ -93,24 +93,43 @@ git remote add origin https://github.com/username/repo.git
 
 Stash temporarily stores changes without committing them.
 
-```sh
-git commit -m "Commit message"
+```bash
+git stash         # Stash all changes
+git stash list    # View stash list
+git stash pop     # Apply and remove latest stash
+git stash apply   # Apply but keep stash
+git stash drop    # Delete a stash
 ```
 
-## Branches
+---
 
-## Remotes
+## 🔀 Merging
 
-## Stashing
+Merging combines changes from one branch into another.
 
-## Merging
-
-## Add
-When we want to add 
-
-## Status
-Git status shows what files will be / will not be committed.
+```bash
+git checkout main
+git merge new-feature
 ```
+
+---
+
+## ➕ Add
+
+`git add` stages files to be committed.
+
+```bash
+git add file.txt   # Stage one file
+git add .          # Stage all changes
+```
+
+---
+
+## 📋 Status
+
+`git status` shows the state of your working directory.
+
+```bash
 git status
 ```
 
