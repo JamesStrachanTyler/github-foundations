@@ -62,6 +62,14 @@ git commit -m "Commit message"
 ## Remotes
 
 ## Stashing
+Stores staged / unstaged changes to be accessed later without requiring a commit.
+```sh
+git stash # Stashes staged + unstaged files
+git stash list # Lists our stashes
+git stash pop # Restore changes + remove from list
+git stash apply # Restore changes but keep in list
+git stash drop # Delete a stash entry
+```
 
 ## Merging
 
