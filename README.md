@@ -1,94 +1,167 @@
-Repository for the testing / practicing w/ the GitHub Foundations course.
+# GitHub Foundations – Practice Repository
 
-## Git Hidden Folder
+This repository is for **testing and practicing Git commands** as part of the [GitHub Foundations certification](https://docs.github.com/en/get-started/learning-about-github/github-foundations-certification) course.  
+It contains notes, examples, and exercises covering common Git operations.
 
-There is a hidden folder called '.git' that tells you that the project is a Git Repo. If we wanted to create a git repository in a new project, we'd create the required folder(s) and then initialize the repository via `git init`.
+---
 
-```sh
+## 📂 Git Hidden Folder
+
+When you initialize a Git repository, a hidden folder named `.git` is created in the project directory. This folder contains all the metadata and history for the repository.
+
+To create a new repository from scratch:
+
+```bash
 mkdir /workspace/tmp/new-project
 cd /workspace/tmp/new-project
 git init
 touch ReadMe.md
-open ReadMe.md # Add relevant changes to readme.md
-git status # This shows tracked / untracked files.
-git add ReadMe.md # This adds "ReadMe.md" as a tracked file
-git commit -a -m "add readme.md file"
+open ReadMe.md   # Edit and add content to ReadMe.md
+git status       # Shows tracked/untracked files
+git add ReadMe.md
+git commit -m "Add ReadMe.md file"
 ```
 
-## Cloning
+---
 
-- We can clone 3 ways.
--- HTTPS
--- SSH
--- GitHub CLI
+## 🔄 Cloning a Repository
 
-Since we're using GitHub Codespaces, we'll create a temporary directory in our workspace.
+There are three common ways to clone a repository:
 
-```sh
+1. **HTTPS**  
+2. **SSH**  
+3. **GitHub CLI**
+
+**Example – HTTPS:**
+```bash
 mkdir /workspace/tmp
 cd /workspace/tmp
+git clone https://github.com/JamesStrachanTyler/github-foundations.git
+cd github-foundations
+ls -la
 ```
 
-### HTTPS
-
-```md
-- git clone https://github.com/JamesStrachanTyler/github-foundations.git
-- cd github-foundations
-- ls -la
+**Example – SSH:**
+```bash
+git clone git@github.com:JamesStrachanTyler/github-foundations.git
 ```
+> 💡 You will need to set up an SSH key or use a Personal Access Token (PAT) for authentication.
 
-### SSH
+---
 
-```md
-- I'd generate a PAT (Personal Access Token) and apply to my local IDE. I can then clone a git repo using: `git@github.com:JamesStrachanTyler/github-foundations.git`
-```
+## 💾 Commits
 
-## Commits
+A commit records changes to the repository.
 
-When we want to commit code, we can write `git commit` which will open up the commit edit message in the code editor.
-
-```sh
+- **Commit using editor:**
+```bash
 git commit
 ```
 
-We can add a commit message using the command line via the following command, rather than having to open up the commit page and adding the message there.
-
-```sh
-git commit -m "Commit message"
+- **Commit with message directly:**
+```bash
+git commit -m "Your commit message"
 ```
 
-## Branches
+---
 
-## Remotes
+## 🌱 Branches
 
-## Stashing
+Branches allow you to work on different versions of your project simultaneously.
 
-## Merging
-
-## Add
-When we want to add 
-
-## Status
-Git status shows what files will be / will not be committed.
+```bash
+git branch new-feature
+git checkout new-feature
+# or in one step:
+git checkout -b new-feature
 ```
+
+---
+
+## 🌐 Remotes
+
+A remote is a reference to a hosted version of your repository (e.g., on GitHub).
+
+```bash
+git remote -v           # List remotes
+git remote add origin https://github.com/username/repo.git
+```
+
+---
+
+## 📦 Stashing
+
+Stash temporarily stores changes without committing them.
+
+```bash
+git stash         # Stash all changes
+git stash list    # View stash list
+git stash pop     # Apply and remove latest stash
+git stash apply   # Apply but keep stash
+git stash drop    # Delete a stash
+```
+
+---
+
+## 🔀 Merging
+
+Merging combines changes from one branch into another.
+
+```bash
+git checkout main
+git merge new-feature
+```
+
+---
+
+## ➕ Add
+
+`git add` stages files to be committed.
+
+```bash
+git add file.txt   # Stage one file
+git add .          # Stage all changes
+```
+
+---
+
+## 📋 Status
+
+`git status` shows the state of your working directory.
+
+```bash
 git status
 ```
 
-## Log
-We can show recent git commits to the git tree via the following command:
-```sh
+---
+
+## 📜 Log
+
+`git log` displays the commit history.
+
+```bash
 git log
 ```
 
-## Reset
+---
 
-Reset allows you to move staged changes back to unstaged. Useful when you only want to commit specific files and revert accidental stages.
+## ♻️ Reset
 
-```sh
+Reset unstages files that were previously added.
+
+```bash
 git add .
-git reset
+git reset          # Unstage all
 ```
-> Git reset would revert the add all.
 
-## Push
-When we want to push our local repository to our remote origin (VCS), we can push 
+---
+
+## 🚀 Push
+
+Push sends your local commits to the remote repository.
+
+```bash
+git push origin main
+```
+
+---
